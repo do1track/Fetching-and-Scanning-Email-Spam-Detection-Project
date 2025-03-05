@@ -1,0 +1,6 @@
+bodies:
+- Congratulations!  You've won a $1000 gift card. Click here to claim now
+predictions:
+- email: Congratulations!  You've won a $1000 gift card. Cl
+  prediction: Spam
+target_email: bipinneupane.077@kathford.edu.np

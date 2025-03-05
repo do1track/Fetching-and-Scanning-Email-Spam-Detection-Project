@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.backpic {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                      url(https://img.freepik.com/free-vector/phishing-account_23-2148539268.jpg?t=st=1732796461~exp=1732800061~hmac=7147dec72953162c57e6c5e78aa19419861d348039c659a21d443be71129ecbc&w=1060);
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 39%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: -200px;
+}
+
+.content h2 {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.form {
+    width: 350px;
+    height: 180px;
+    background: linear-gradient(to top, rgba(35, 34, 60, 0.8) 65%, rgba(0, 0, 0, 0.8) 35%);
+    top: 240px;
+    position: absolute;
+    left: 460px;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.form h2 {
+    width: 350px;
+    height: 40px;
+    background: rgb(10, 194, 240);
+    text-align: center;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.form input {
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid orange;
+    color: #fff;
+    font-size: 15px;
+    padding-left: 9px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+}
+
+::placeholder {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    background: rgb(10, 194, 240);
+    border: none;
+    margin-top: 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    transition: 0.4s ease;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.form-recipient {
+    width: 368px;
+    height: 40px;
+    background: linear-gradient(to top, rgba(35, 34, 60, 0.8) 50%, rgba(0, 0, 0, 0.8) 50%);
+    top: 475px;
+    position: absolute;
+    left: 460px;
+    border-radius: 10px;
+    padding: 16px;
+    color: white;
+    text-align: center;
+}
+
+.form-recipient h3 {
+    width: 350px;
+    height: 20px;
+    background: rgb(10, 194, 240);
+    color: black;
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+    margin-top: -11px;
+}
+
+.form-result {
+    width: 269px;
+    height: 200px;
+    background: linear-gradient(to top, rgba(35, 34, 60, 0.8) 79%, rgba(0, 0, 0, 0.8) 21%);
+    top: 240px;
+    position: absolute;
+    left: 865px;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.form-result h3 {
+    width: 269px;
+    height: 20px;
+    background: rgb(10, 194, 240);
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.form-link {
+    width: 269px;
+    height: 100px;
+    background: linear-gradient(to top, rgba(35, 34, 60, 0.8) 65%, rgba(0, 0, 0, 0.8) 35%);
+    top: 560px;
+    position: absolute;
+    left: 1225px;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.form-link h3 {
+    width: 269px;
+    height: 20px;
+    background: rgb(10, 194, 240);
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.btn-link {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 18px;
+}
+
+.form-link button {
+    padding: 2px;
+    border-radius: 5px;
+    background: rgb(170, 203, 228);
+    width: 100%;
+    height: 30px;
+}
+
+#resultsList{
+    color: white;
+}
