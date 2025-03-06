@@ -129,7 +129,7 @@ def classify_emails(email_bodies, model, feature_extraction):
     for body in email_bodies:
         input_data_features = feature_extraction.transform([body])
         prediction = model.predict(input_data_features)[0]
-        results.append({"prediction": "Ham ✅" if prediction == 1 else "Spam 🚨", "email": body[:50]})
+        results.append({"prediction": "Ham ✅" if prediction == 1 else "Spam 🚨", "email": body[:200]})
     return results
 
 
