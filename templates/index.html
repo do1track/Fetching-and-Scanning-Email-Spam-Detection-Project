@@ -5,45 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Fetch and Scan</title>
-    <script>
-        function scanEmail(event) {
-            event.preventDefault();
-
-            let formData = new FormData(document.getElementById("emailForm"));
-
-            fetch("/", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("currentEmail").innerText = data.target_email;
-
-                let resultsList = document.getElementById("resultsList");
-                resultsList.innerHTML = "";
-
-                if (data.predictions.length > 0) {
-                    data.predictions.forEach(result => {
-                        let listItem = document.createElement("li");
-                        listItem.className = result.prediction.includes("Spam") ? "spam" : "ham";
-                        listItem.innerHTML = `<strong>${result.prediction}</strong>: ${result.email}`;
-                        resultsList.appendChild(listItem);
-                    });
-                } else {
-                    resultsList.innerHTML = "<p>No emails classified yet.</p>";
-                }
-            })
-            .catch(error => console.error("Error:", error));
-        }
-
-        document.getElementById("first").addEventListener('click', function() {
-            window.location.href = "/";
-        });
-
-        document.getElementById("second").addEventListener('click', function() {
-            window.location.href = "/";
-        });
-    </script>
 </head>
 <body>
     <div class="backpic"></div>
@@ -53,6 +14,7 @@
 
     </div>
 <div class="main">
+    <p>&nbsp;</p>
     <p>&nbsp;</p>
     <div class="form">
         <h2>FETCH AND SCAN!</h2>
@@ -74,14 +36,55 @@
         <ul id="resultsList"></ul>
     </div>
 
-    <div class="form-link">
+    <!-- <div class="form-link">
         <h3>Extra Feature</h3>
         <div class="btn-link">
             <button id="first" type="button">LINK 1</button>
             <button id="second" type="button">LINK 2</button>
         </div>
-    </div>
+    </div> -->
+
 </div>
+
+<script>
+    function scanEmail(event) {
+        event.preventDefault();
+
+        let formData = new FormData(document.getElementById("emailForm"));
+
+        fetch("/", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("currentEmail").innerText = data.target_email;
+
+            let resultsList = document.getElementById("resultsList");
+            resultsList.innerHTML = "";
+
+            if (data.predictions.length > 0) {
+                data.predictions.forEach(result => {
+                    let listItem = document.createElement("li");
+                    listItem.className = result.prediction.includes("Spam") ? "spam" : "ham";
+                    listItem.innerHTML = `<strong>${result.prediction}</strong>: ${result.email}`;
+                    resultsList.appendChild(listItem);
+                });
+            } else {
+                resultsList.innerHTML = "<p>No emails classified yet.</p>";
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    }
+
+    // document.getElementById("first").addEventListener('click', function() {
+    //     window.location.href = "/";
+    // });
+
+    // document.getElementById("second").addEventListener('click', function() {
+    //     window.location.href = "/";
+    // });
+</script>
 
 </body>
 </html>
